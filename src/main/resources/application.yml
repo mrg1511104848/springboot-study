@@ -1,6 +1,29 @@
 server:
-  port: 9999
+    port: 9999
+spring:
+  profiles:
+    active: dev
+app:
+  name: MyApp
+  description: ${app.name} is a Spring Boot application
+my_random:
+  secret: ${random.value}
+  number: ${random.int}
+  bignumber: ${random.long}
+  uuid: ${random.uuid}
+  range10: ${random.int(10)}
+  rangeStartAndEnd: ${random.int[1024,65536]}
 my:
   servers:
           - dev.com
           - another.dev.com
+---
+spring:
+  profiles: test
+server:
+    port: 8882
+---
+spring:
+  profiles: dev
+server:
+    port: 8884
