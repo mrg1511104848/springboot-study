@@ -18,22 +18,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=StudyApplication.class)
 @AutoConfigureMockMvc
-public class StudyApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
-
-
-	@Autowired
-	private MockMvc mvc;
+public class ConfigTest {
 	@Autowired
 	private Config config;
 	@Test
-	public void getHello() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("hello world")));
+	public void testConfig() throws Exception {
 		System.out.println(config.getServers());
 	}
 
