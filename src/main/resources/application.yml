@@ -1,0 +1,6 @@
+server:
+  port: 9999
+my:
+  servers:
+          - dev.com
+          - another.dev.com
