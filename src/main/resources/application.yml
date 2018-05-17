@@ -1,12 +1,16 @@
 server:
     port: 9999
+    jetty:
+      accesslog:
+        time-zone: GMT+8
 spring:
   profiles:
     active: dev
+
 app:
   name: MyApp
   description: ${app.name} is a Spring Boot application
-my_random:
+myrandom:
   secret: ${random.value}
   number: ${random.int}
   bignumber: ${random.long}
@@ -25,5 +29,16 @@ server:
 ---
 spring:
   profiles: dev
+  jackson:
+      time-zone: GMT+8
+      date-format: yyyy-MM-dd HH:mm:ss
+      serialization:
+        write_dates_as_timestamps: false
 server:
     port: 8884
+management:
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: "*"

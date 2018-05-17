@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-@ConfigurationProperties(prefix = "my_random")
+@ConfigurationProperties(prefix = "myrandom")
 public class MyRandom {
     private String secret;
     private int number;
