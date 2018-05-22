@@ -55,7 +55,11 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-
+        <!-- Spring Boot log4j依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -78,6 +82,10 @@
     </build>
 
     <repositories>
+            <repository>
+                <id>aliyunmaven</id>
+                <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            </repository>
         <repository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
